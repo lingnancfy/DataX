@@ -541,7 +541,7 @@ public class CommonRdbmsWriter
                 // for mysql bug, see http://bugs.mysql.com/bug.php?id=35115
                 case Types.DATE:
                     if ("year"
-                            .equalsIgnoreCase(this.resultSetMetaData.getRight().get(columnIndex))) {
+                            .equalsIgnoreCase(this.resultSetMetaData.getRight().get(columnIndex - 1))) {
                         if (column.asBigInteger() == null) {
                             preparedStatement.setString(columnIndex, null);
                         }
